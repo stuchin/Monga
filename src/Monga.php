@@ -31,13 +31,13 @@ class Monga
         // get name database
 	$namedatabase = substr(strrchr($mongo_dns, DS), 1);
         
-         //$options  = array('connect' =>TRUE  );
-	 if (is_array($options)) 
+        //$options  = array('connect' =>TRUE  );
+	if (is_array($options)) 
         $connection = self::connection($mongo_dns,$options);
         else $connection = self::connection($mongo_dns);
 
          // Get the database
-         $GLOBALS["database"] = $connection->database($namedatabase);
+        $GLOBALS["database"] = $connection->database($namedatabase);
          
 	}
 		
