@@ -87,7 +87,23 @@ class Cursor implements \Countable, \IteratorAggregate
 	{
 		return iterator_to_array($this->getIterator());
 	}
-
+	
+	/**
+	 * Returns the result as a simple array
+	 * @author     Sergei Stuchin
+	 * @return  array  the iterator as array
+	 */
+	public function toSimpleArray()
+	{
+            
+		$data = iterator_to_array($this->getIterator());
+                
+                foreach ($data as $key => $value)
+                {
+                }
+                return $value;
+	}
+        
 	/**
 	 * Return the result content as MongoDBREf objects.
 	 *
